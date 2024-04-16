@@ -68,10 +68,13 @@ class ExcursionTest {
         assertEquals(2850, excursion.calcularCosteExcursion());
     }
 
+
     @Test
     @DisplayName("Coste total 29 alumnos")
     void calcularCosteExcursion4() {
         excursion = new Excursion(29);
         assertEquals(4000, excursion.calcularCosteExcursion());
+
+       //subirlo a github!!
     }
 }

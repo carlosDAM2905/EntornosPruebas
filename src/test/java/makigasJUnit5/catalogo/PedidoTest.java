@@ -6,12 +6,24 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PedidoTest {
 
-    @BeforeEach
+    Producto p1;
+    Producto p2;
+    Pedido pedido;
+
+
+
+    @BeforeEach //esto significa "antes de cada uno"
     void setUp() {
+         pedido = new Pedido();
+        Producto p1 = new Producto("Coco", 400);
+        Producto p2 = new Producto("Canela", 200);
     }
 
-    @AfterEach
+    @AfterEach // esto significa "después de cada uno"
+
     void tearDown() {
+
+        pedido.vaciar();
     }
 
     @Test
@@ -22,28 +34,19 @@ class PedidoTest {
     @DisplayName("Pedido con 0 productos")
     void testCantidad() {
 
-        Pedido p = new Pedido();
-
         // vamos a probar que cuando el pedido está vacío la cantidad que devuelve es 0
 
-        assertEquals(0, p.cantidad());
-
+        assertEquals(0, pedido.cantidad());
     }
 
     @Test
     @DisplayName("Pedido con 1 producto")
     void testCantidad2() {
+
         // para probar el método cantidad necesito un objeto de tipo Pedido con una serie de productos añadidos
 
-        Producto p1 = new Producto("Coco", 400);
-
-        Pedido p = new Pedido();
-
-
-        p.agregar(p1);
-        assertEquals(1, p.cantidad());
-
-
+        pedido.agregar(p1);
+        assertEquals(1, pedido.cantidad());
 
     }
 
@@ -52,14 +55,11 @@ class PedidoTest {
     void testCantidad3() {
         // para probar el método cantidad necesito un objeto de tipo Pedido con una serie de productos añadidos
 
-        Producto p1 = new Producto("Coco", 400);
-        Producto p2 = new Producto("Canela", 200);
-        Pedido p = new Pedido();
 
-        p.agregar(p1);
-        p.agregar(p2);
+        pedido.agregar(p1);
+        pedido.agregar(p2);
 
-        assertEquals(2, p.cantidad());
+        assertEquals(2, pedido.cantidad());
 
     }
 

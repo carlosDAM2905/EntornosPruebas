@@ -1,4 +1,4 @@
-package ejercicioscajanegra.ejercicio2;
+package ejercicioscajanegra.ejercicioidentificador;
 
 import java.util.Arrays;
 

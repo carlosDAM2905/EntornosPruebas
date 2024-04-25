@@ -1,4 +1,4 @@
-package ejercicioscajanegra.ejercicio1;
+package ejercicioscajanegra.ejercicioexcursion;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

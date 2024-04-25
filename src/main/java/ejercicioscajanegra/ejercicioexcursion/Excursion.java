@@ -1,4 +1,4 @@
-package ejercicioscajanegra.ejercicio1;
+package ejercicioscajanegra.ejercicioexcursion;
 
 public class Excursion {
     private int numeroAlumnos;

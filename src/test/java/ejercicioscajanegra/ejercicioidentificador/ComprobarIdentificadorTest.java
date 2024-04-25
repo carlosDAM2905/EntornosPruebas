@@ -1,4 +1,4 @@
-package ejercicioscajanegra.ejercicio2;
+package ejercicioscajanegra.ejercicioidentificador;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

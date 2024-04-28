@@ -1,21 +1,49 @@
 package ejercicioscajanegra.ejerciciodni;
-
+/**
+ * Clase LectorDNI
+ * Tiene el atributo dni de tipo String
+ * Contiene un constructor sin parámetros
+ * @version 1.0
+ * @author Carlos DAM
+ * @since 27-04-2024
+ */
 public class LectorDNI {
 
+    /**
+     * dni a comprobar
+     */
         private String dni;
 
-        public LectorDNI() {
+    /**
+     * constructor sin parámetros
+     */
+    public LectorDNI() {
         }
 
-        public void setDni(String dni) {
+    /**
+     * Setter dni
+     * @param dni
+     */
+
+    public void setDni(String dni) {
             this.dni = dni;
         }
 
-        public boolean comprobarLongitud() {
+    /**
+     * Comprueba la longitud del dni
+     * @return un boolean comprobando si la longitud es correcta o no
+     */
+
+    public boolean comprobarLongitud() {
             return dni.length() == 9;
         }
 
-        public boolean comprobarEstrucura(){
+    /**
+     * Comprueba la estructura del dni
+     * @return un boolean comprobando si la estructura es la correcta o no
+     */
+
+    public boolean comprobarEstrucura(){
             for (int i = 0; i < 8; i++) {
                 if (!Character.isDigit(dni.charAt(i))) {
                     return false;
@@ -24,7 +52,12 @@ public class LectorDNI {
             return true;
         }
 
-        public boolean comprobarLetra() {
+    /**
+     * Comprueba que el último carácter del dni sea una letra (mayúscula o minúscula)
+     * @return un boolean comprobando si el último carácter es una letra
+     */
+
+    public boolean comprobarLetra() {
             Character letra = dni.charAt(dni.length() - 1);
             if (Character.isLetter(letra)) {
                 return true;
@@ -33,7 +66,12 @@ public class LectorDNI {
             }
         }
 
-        public boolean letraCorrecta() {
+    /**
+     * Comprueba que la letra del dni sea la correspondiente al número sin letra del dni
+     * @return un boolean comprobando que la letra sea la que corresponde
+     */
+
+    public boolean letraCorrecta() {
             String dniSinLetra = dni.substring(0,dni.length()-1);
             String letraDni = dni.substring(9);
             int numeroDni = Integer.parseInt(dniSinLetra);
@@ -47,7 +85,12 @@ public class LectorDNI {
 
 
         }
-        public boolean validarDNI(){
+
+    /**
+     * Valida el dni si la longitud, letra y estructura son correctas
+     * @return un boolean
+     */
+    public boolean validarDNI(){
             if (comprobarLongitud() && comprobarLetra() && comprobarEstrucura() && letraCorrecta()){
                 return true;
             } else {
